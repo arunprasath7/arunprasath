@@ -14,6 +14,7 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.model.Product;
 import com.model.User;
 
 
@@ -40,6 +41,7 @@ public class ApplicationContext {
 	    LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
 	    sessionBuilder.addProperties(getHibernateProperties());
 	 	    sessionBuilder.addAnnotatedClasses(User.class);
+	 	   sessionBuilder.addAnnotatedClasses(Product.class);
 		    return sessionBuilder.buildSessionFactory();
 	    
 	}
